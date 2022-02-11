@@ -1,5 +1,5 @@
 {% set name = "flask-multipass" %}
-{% set version = "0.4.5" %}
+{% set version = "0.4.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Flask-Multipass-{{ version }}.tar.gz
-  sha256: 75123f15f2df088598b724360152454f24ce3b073981a422bc44173ad270ee9e
+  sha256: a9b351e0f66538fd2e5bb5d5d5a0f72f56fec99b3219faa35bd266df907abac9
 
 build:
   number: 0
