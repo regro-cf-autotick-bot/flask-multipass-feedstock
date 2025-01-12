@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Flask-Multipass-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Flask-Multipass-{{ version }}.tar.gz
   sha256: b7134560c49ad711d6b51c41f9bcc3716a427ce0fa25cb8519d733856a6628bd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - authlib >=0.14.1,<=1.0.0a1
     - blinker
     - flask >=0.10.1
     - flask-wtf
-    - python >=3.6
+    - python >={{ python_min }}
     - python-ldap >=3.3.1,<4.0
     - sqlalchemy
 
@@ -53,6 +53,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/indico/flask-multipass
